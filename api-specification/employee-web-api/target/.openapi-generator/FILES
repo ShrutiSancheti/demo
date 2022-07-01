@@ -1,0 +1,6 @@
+.openapi-generator-ignore
+README.md
+generated-sources/com/example/demo/base/api/ApiUtil.java
+generated-sources/com/example/demo/base/api/EmployeeApi.java
+generated-sources/com/example/demo/base/api/model/Employee.java
+pom.xml

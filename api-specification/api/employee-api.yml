@@ -1,0 +1,89 @@
+openapi: 3.0.0
+
+info:
+  version: 0.0.1
+  title: Employee Service
+  description: The Employee service
+
+tags:
+  - name: "Employee"
+
+paths:
+  /add/employee:
+    post:
+      summary: Add a new employee.
+      tags:
+        - "Employee"
+      requestBody:
+        $ref: '#/components/requestBodies/EmployeeBody'
+      operationId: addEmployee
+      responses:
+        '201':
+          description: Created
+  /put/employee:
+    put:
+      summary: Edit employee.
+      tags:
+        - "Employee"
+      requestBody:
+        $ref: '#/components/requestBodies/EmployeeBody'
+      operationId: editEmployee
+      responses:
+        '201':
+          description: Edited
+  /delete/{employeeId}:
+    delete:
+      summary: delete employee.
+      tags:
+        - "Employee"
+      parameters:
+      - name: "employeeId"
+        in: "path"
+        description: "Employee id to delete"
+        required: true
+        schema:
+          type: integer
+      operationId: deleteEmployee
+      responses:
+        '200':
+          description: delete
+  /get/employees:
+    get:         
+      summary: Get all students.
+      tags:
+        - "Employee"
+
+      description: This is a Student service description
+      operationId: getAllEmployee
+      responses:
+        "200":
+          description: This means its ok.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+components:
+  schemas:
+    Employee:
+      description: This is the Employee model.
+      type: object
+      properties:
+        id:
+          description: The ID of Employee.
+          type: integer
+        name:
+          description: The Name of Employee.
+          type: string
+        salary:
+          description: The salary of Employee.
+          type: integer
+  requestBodies:
+    EmployeeBody:
+      description: A JSON object containing pet information
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Employee'
