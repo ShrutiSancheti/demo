@@ -1,0 +1,5 @@
+[{"name":"Shruti","id":701,"salary":15000}
+,{"name":"Shreyash","id":123,"salary":10000}
+,{"name":"deep","id":111,"salary":7000}
+,{"name":"Riya","id":230,"salary":8900}
+,{"name":"Raj","id":2197,"salary":13000}
